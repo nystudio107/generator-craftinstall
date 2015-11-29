@@ -147,6 +147,93 @@ A list of arbitrary shell commands to execute in sequence at the [ End ] phase o
 
 By default, generator-nystudio107 doesn't execute any commands at the [ End ] phase, but you can add any that you'd like executed here.
 
+## Sample Output
+
+Here's an example of the output from a `yo nystudio107` generator:
+
+```
+vagrant@homestead:~/sites/testapp101$ yo nystudio107
+[ Initializing ]
+[ Prompting ]
+? Application name testapp
+[ Configuring ]
+{ appName: 'testapp',
+  installDir: 'testapp101',
+  templatesDir: 'templates' }
+> Downloading files
++ Craft CMS downloading
+  4385 files download and extracted successfully;)
+[ Writing ]
+> Deleting files
++ Directory craft/templates deleted
++ File craft/config/db.php deleted
++ File craft/config/general.php deleted
+> Moving files
++ public/htaccess moved to public/.htaccess
+> Writing template files
++ templates/_bower.json wrote to bower.json
++ templates/_package.json wrote to package.json
++ templates/craft/config/_db.php wrote to craft/config/db.php
++ templates/craft/config/_general.php wrote to craft/config/general.php
++ templates/scripts/_pull-db-from-prod.sh wrote to scripts/pull-db-from-prod.sh
++ templates/scripts/_push-dev-to-git.sh wrote to scripts/push-dev-to-git.sh
++ templates/scripts/_push-dev-to-prod.sh wrote to scripts/push-dev-to-prod.sh
+> Copying boilerplate files
++ templates/_csslintrc copied to .csslintrc
++ templates/_gitignore copied to .gitignore
++ templates/_jshintrc copied to .jshintrc
++ templates/_Gruntfile.js copied to Gruntfile.js
+> Copying boilerplate directories
++ templates/craft/templates copied to craft/templates
++ templates/css_src copied to css_src
++ templates/js_src copied to js_src
++ templates/json_src copied to json_src
++ templates/img_src copied to img_src
++ templates/fontello_src copied to fontello_src
+> Cloning base Craft plugins
++ Minify plugin installed
+Cloning into 'craft/plugins/minify'...
++ Cookies plugin installed
+Cloning into 'craft/plugins/cookies'...
++ Path Tools plugin installed
+Cloning into 'craft/plugins/pathtools'...
+> Sync to file system
+   create bower.json
+   create package.json
+   create craft/config/db.php
+   create craft/config/general.php
+   create scripts/pull-db-from-prod.sh
+   create scripts/push-dev-to-git.sh
+   create scripts/push-dev-to-prod.sh
+   create .csslintrc
+   create .gitignore
+   create .jshintrc
+   create Gruntfile.js
+[ Install ]
+> Creating craft/storage directory
+> Setting global permissions to 755
+> Setting permissions on craft/app/ to 775
+> Setting permissions on craft/config/ to 775
+> Setting permissions on craft/storage to 775
+> Creating bare remote git repository
+> Initializing local git repository
++ Minify added as submodule
++ Cookies added as submodule
++ Path Tools added as submodule
+> Adding project files to git repository
+> Doing initial commit to git repository
+> Pushing git repository to origin master
+To git@tastystakes.com:testapp.git
+ * [new branch]      master -> master
+> Bower Install
+> NPM Install
+[ End ]
+> End install commands
++ animate.css npm install executed
+> All set.  Have a nice day.
+vagrant@homestead:~/sites/testapp101$ 
+```
+
 ## Changelog
 
 ### 1.0.0 -- 2015.11.29
