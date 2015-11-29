@@ -448,11 +448,11 @@ module.exports = yo.generators.Base.extend({
         console.log(chalk.green('> Setting global permissions to 755 / 644'));
         child_process.execSync('chmod -R 755 *');
         child_process.execSync('find . -type f -exec chmod 644 {} \\;');
-        console.log(chalk.green('> Setting permissions on craft/app/ to 775 / 644'));
-        child_process.execSync('chmod -R 775 craft/app/*');
+        console.log(chalk.green('> Setting permissions on craft/app to 775 / 644'));
+        child_process.execSync('chmod -R 775 craft/app');
         child_process.execSync('find craft/app/ -type f -exec chmod 664 {} \\;');
-        console.log(chalk.green('> Setting permissions on craft/config/ to 775 / 644'));
-        child_process.execSync('chmod -R 775 craft/config/*');
+        console.log(chalk.green('> Setting permissions on craft/config to 775 / 644'));
+        child_process.execSync('chmod -R 775 craft/config');
         child_process.execSync('find craft/config/ -type f -exec chmod 664 {} \\;');
         console.log(chalk.green('> Setting permissions on craft/storage to 775 / 644'));
         child_process.execSync('chmod -R 775 craft/storage');
