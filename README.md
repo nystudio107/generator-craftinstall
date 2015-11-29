@@ -34,7 +34,7 @@ generator-nystudio107 will do the following for you:
 7. Copy over `.csslintrc`, `.gitignore`, and `.jshintrc` files into your project
 8. Copy over any folders of boilerplate files you want (base Craft CMS templates, base CSS, scripts, whatever)
 9. Clone Craft CMS plugins that you use with your projects from Github
-10. Set the permissions properly for your Craft CMS install
+10. Set the permissions properly for your Craft CMS install; you might need to `chgrp -R WEBSERVER_GROUP` on the project folder, depending on your setup
 11. [Optionally] create a bare remote `git` repository on your git server, create a local git repository, commit all of the files in your new local project to it, and push them to `origin master`
 12. Run `bower install` and `npm install` on your project, so it's ready to go
 13. Execute arbitrary shell commands when the install is finished
