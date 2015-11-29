@@ -41,7 +41,7 @@ generator-nystudio107 will do the following for you:
 
 ## Customizing generator-nystudio107
 
-generator-nystudio107 is pretty useful out of the box, but the real bliss comes from tailoring it to your environment.  To this end, open up the file `generator-nystudio107/app/index.js` file in your favorite editor.
+generator-nystudio107 is pretty useful out of the box, but the real bliss comes from tailoring it to your environment.  **Fork it** on GitHub, and make it your own.  To this end, open up the file `generator-nystudio107/app/index.js` file in your favorite editor.
 
 You will see a number of configurable sections where you can tell generator-nystudio107 how to scaffold your projects.
 
