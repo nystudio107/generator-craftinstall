@@ -445,14 +445,18 @@ module.exports = yo.generators.Base.extend({
 
 /* -- Set permissions on the entire Craft install tree */
 
-        console.log(chalk.green('> Setting global permissions to 755'));
+        console.log(chalk.green('> Setting global permissions to 755 / 644'));
         child_process.execSync('chmod -R 755 *');
-        console.log(chalk.green('> Setting permissions on craft/app/ to 775'));
+        child_process.execSync('find . -type f -exec chmod 644 {} \\;');
+        console.log(chalk.green('> Setting permissions on craft/app/ to 775 / 644'));
         child_process.execSync('chmod -R 775 craft/app/*');
-        console.log(chalk.green('> Setting permissions on craft/config/ to 775'));
+        child_process.execSync('find craft/app/ -type f -exec chmod 664 {} \\;');
+        console.log(chalk.green('> Setting permissions on craft/config/ to 775 / 644'));
         child_process.execSync('chmod -R 775 craft/config/*');
-        console.log(chalk.green('> Setting permissions on craft/storage to 775'));
+        child_process.execSync('find craft/config/ -type f -exec chmod 664 {} \\;');
+        console.log(chalk.green('> Setting permissions on craft/storage to 775 / 644'));
         child_process.execSync('chmod -R 775 craft/storage');
+        child_process.execSync('find craft/storage/ -type f -exec chmod 664 {} \\;');
 
 /* -- Create a bare remote git repository */
 
