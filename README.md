@@ -6,7 +6,7 @@ Type just `yo nystudio107` and a new Craft CMS project install tailored to your 
 
 generator-nystudio107 is useful right out of the box, but it intended to be a skeleton framework upon which you can build your own generator that creates your ideal Craft CMS scaffolding for you.
 
-# Installation
+## Installation
 
 This assumes you have `nodejs`, `npm`, and `yeoman` installed already.
 
@@ -14,7 +14,7 @@ This assumes you have `nodejs`, `npm`, and `yeoman` installed already.
 2.  -OR- do a `git clone https://github.com/khalwat/generator-nystudio107.git` directly onto your dev machine.  You can then update it with `git pull`
 3. On the command line, from the root of the generator-nystudio107 project (in the `generator-nystudio107/` folder), type: `npm link` to install the project dependencies and symlink a global module.  On some setups, you may have to do `sudo npm link --no-bin-links`
 
-# Usage
+## Usage
 
 To create a new project and use generator-nystudio107 to scaffold it:
 
@@ -39,13 +39,13 @@ generator-nystudio107 will do the following for you:
 12. Run `bower install` and `npm install` on your project, so it's ready to go
 13. Execute arbitrary shell commands when the install is finished
 
-# Customizing generator-nystudio107
+## Customizing generator-nystudio107
 
 generator-nystudio107 is pretty useful out of the box, but the real bliss comes from tailoring it to your environment.  To this end, open up the file `generator-nystudio107/app/index.js` file in your favorite editor.
 
 You will see a number of configurable sections where you can tell generator-nystudio107 how to scaffold your projects.
 
-## QUESTIONS
+### QUESTIONS
 
 These are the questions that are asked prior to installation.  The variables set here are passed into your TEMPLATE_FILES in the form of `<%= name %>` for substitution in your templates, e.g.:
 
@@ -61,7 +61,7 @@ An additional variable `installDir` is also passed in automatically, e.g.:
 
 By default, generator-nystudio107 just asks for the `appName` but you can add whatever additional template variables you find useful.
 
-## DOWNLOAD_FILES
+### DOWNLOAD_FILES
 
 A list of arbitrary file URLs to download and extract
 
@@ -70,7 +70,7 @@ A list of arbitrary file URLs to download and extract
 
 By default, generator-nystudio107 just downloads the latest Craft CMS, but if you have other things you want downloaded, you can add them here.
 
-## DELETE_FILES
+### DELETE_FILES
 
 Files or directories that should be deleted after the download
 
@@ -78,7 +78,7 @@ Files or directories that should be deleted after the download
 
 By default, generator-nystudio107 deletes the default `craft/templates`, `craft/config/db.php`, and `craft/config/general.php` but if you have other things you want deleted, you can add them here.
 
-## MOVE_FILES
+### MOVE_FILES
 
 Files that should be moved (renamed) after the download
 
@@ -87,7 +87,7 @@ Files that should be moved (renamed) after the download
 
 By default, generator-nystudio107 just moves the `public/htaccess` file to `public/.htaccess`, but you can add any other files that you want moved/renamed here.
 
-## TEMPLATE_FILES
+### TEMPLATE_FILES
 
 Files that are parsed as templates with the 'answers' context, to allow for variable substitution while copying them from `src:` to `dest:`
 
@@ -96,7 +96,7 @@ dest: the destination path for the file, relative to the project directory
 
 By default, generator-nystudio107 just creates new `craft/config/db.php`, `craft/config/general.php`, `bower.json` and `package.json` files with your `appName` filled in, but you can add any additional files you want parsed as templates here.
 
-## BOILERPLATE_FILES
+### BOILERPLATE_FILES
 
 Individual files that we copy wholesale from 'templates' to the destination; we do it this way so we can optionally rename the files on copy
 
@@ -105,7 +105,7 @@ Individual files that we copy wholesale from 'templates' to the destination; we 
 
 By default, generator-nystudio107 just copies over `.csslintrc`, `.gitignore`, and `.jshintrc` into the root of your project, but you can add any additional files you want copied here.
 
-## BOILERPLATE_DIRECTORIES
+### BOILERPLATE_DIRECTORIES
 
 Directories that we copy wholesale from 'templates' to the destination
 
@@ -114,7 +114,7 @@ Directories that we copy wholesale from 'templates' to the destination
 
 By default, generator-nystudio107 just copies over some dummy `craft/templates` to show you how you can do it for your own base Craft CMS templates.
 
-## CRAFT_PLUGINS
+### CRAFT_PLUGINS
 
 Craft CMS plugins downloaded from git repositories on github.com
 
@@ -124,7 +124,7 @@ Craft CMS plugins downloaded from git repositories on github.com
 
 By default, generator-nystudio107 just clones my `Minify`, `Cookies`, and `Path Tools` plugins, but you can change these, or add any plugins you want cloned here.
 
-## REMOTE_GIT_ORIGIN
+### REMOTE_GIT_ORIGIN
 
 This is the remote git server you use, in the form of user@domain.com  If you don't use a git server, you can just leave this as an empty string, e.g.: `''`, to skip the git-related steps.  See: [How To Set Up a Private Git Server on a VPS](https://www.digitalocean.com/community/tutorials/how-to-set-up-a-private-git-server-on-a-vps)
 
@@ -138,7 +138,7 @@ Because your `CRAFT_PLUGINS` are added as submodules, when you want to `git clon
 
 If you want to update the submodules in your repo, do `git submodule update --recursive` and it'll update all of your submodules for you.
 
-## END_INSTALL_COMMANDS
+### END_INSTALL_COMMANDS
 
 A list of arbitrary shell commands to execute in sequence at the [ End ] phase of the generator
 
@@ -147,7 +147,7 @@ A list of arbitrary shell commands to execute in sequence at the [ End ] phase o
 
 By default, generator-nystudio107 doesn't execute any commands at the [ End ] phase, but you can add any that you'd like executed here.
 
-## Sample Output
+### Sample Output
 
 Here's an example of the output from a `yo nystudio107` generator:
 
