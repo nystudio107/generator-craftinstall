@@ -137,7 +137,7 @@ If this is set to a `user@domain.com`, the following steps happen:
 
 Because your `CRAFT_PLUGINS` are added as submodules, when you want to `git clone` your repo, you should do: `git clone --recursive` to have it also clone the submodules.
 
-If you want to update the submodules in your repo, do `git submodule update --recursive` and it'll update all of your submodules for you.
+If you want to update the submodules in your repo, do `git submodule foreach git pull origin master` and it'll update all of your submodules for you.
 
 ### END_INSTALL_COMMANDS
 

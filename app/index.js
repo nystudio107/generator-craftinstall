@@ -159,6 +159,10 @@ const BOILERPLATE_FILES = [
         src: "_jshintrc",
         dest: ".jshintrc"
     },
+    {
+        src: "craft/storage/_gitignore",
+        dest: "craft/storage/.gitignore"
+    },
 ];
 
 /* --------------------------------------------------------------------------------
@@ -438,11 +442,6 @@ module.exports = yo.generators.Base.extend({
     install: function() {
         console.log(chalk.yellow.bold('[ Install ]'));
 
-/* -- Create the craft/storage directory */
-
-        console.log(chalk.green('> Creating craft/storage directory'));
-        child_process.execSync('mkdir craft/storage');
-
 /* -- Set permissions on the entire Craft install tree */
 
         console.log(chalk.green('> Setting global permissions to 755 / 644'));
@@ -476,7 +475,7 @@ module.exports = yo.generators.Base.extend({
             }
             console.log(chalk.green('> Adding project files to git repository'));
             child_process.execSync('git add -A');
-            child_process.execSync('git add -f craft/storage');
+            child_process.execSync('git add -f craft/storage/.gitignore');
             console.log(chalk.green('> Doing initial commit to git repository'));
             child_process.execSync('git commit -m "initial commit"');
             console.log(chalk.green('> Pushing git repository to origin master'));
