@@ -12,8 +12,9 @@ This assumes you have `nodejs`, `npm`, and `yeoman` installed already.
 
 1. Download & unzip the file and place the `generator-nystudio107` directory onto your dev machine
 2.  -OR- do a `git clone https://github.com/khalwat/generator-nystudio107.git` directly onto your dev machine.  You can then update it with `git pull`
-3.  -OR- do an `npm install generator-nystudio107` to install it via npm
-4. On the command line, from the root of the generator-nystudio107 project (in the `generator-nystudio107/` folder), type: `npm link` to install the project dependencies and symlink a global module.  On some setups, you may have to do `sudo npm link --no-bin-links`
+3. On the command line, from the root of the generator-nystudio107 project (in the `generator-nystudio107/` folder), type: `npm link` to install the project dependencies and symlink a global module.  On some setups, you may have to do `sudo npm link --no-bin-links`
+4.  -OR- do an `npm -g install generator-nystudio107` to install it via npm (and thus skip the `npm link` step)
+5. The generator folder should be named `generator-nystudio107`.  GitHub recently started appending `-master` (the branch name) to the name of the folder for zip file downloads.
 
 ## Usage
 
