@@ -16,6 +16,8 @@ This assumes you have `nodejs`, `npm`, and `yeoman` installed already.
 4.  -OR- do an `npm -g install generator-nystudio107` to install it via npm (and thus skip the `npm link` step)
 5. The generator folder should be named `generator-nystudio107`.  GitHub recently started appending `-master` (the branch name) to the name of the folder for zip file downloads.
 
+Requires Node version 4.0.0 or later.
+
 ## Usage
 
 To create a new project and use generator-nystudio107 to scaffold it:
