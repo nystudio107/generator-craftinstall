@@ -1,53 +1,66 @@
-# generator-nystudio107 
+# generator-craftinstall 
 
-generator-nystudio107 is a [Yeoman](http://yeoman.io) generator for [Craft CMS](http://www.buildwithcraft.com) installs
+generator-craftinstall is a [Yeoman](http://yeoman.io) generator for [Craft CMS](http://www.buildwithcraft.com) installs
 
-Type just `yo nystudio107` and a new Craft CMS project install tailored to your liking will be created.
+Type just `yo craftinstall` and a new Craft CMS project install tailored to your liking will be created.
 
-generator-nystudio107 is useful right out of the box, but it intended to be a skeleton framework upon which you can build your own generator that creates your ideal Craft CMS scaffolding for you.
+generator-craftinstall is useful right out of the box, but it intended to be a framework upon which you can build your own install configuration that creates your ideal Craft CMS scaffolding.
 
 ## Installation
 
 This assumes you have `nodejs`, `npm`, and `yeoman` installed already.
 
-1. Download & unzip the file and place the `generator-nystudio107` directory onto your dev machine
-2.  -OR- do a `git clone https://github.com/khalwat/generator-nystudio107.git` directly onto your dev machine.  You can then update it with `git pull`
-3. On the command line, from the root of the generator-nystudio107 project (in the `generator-nystudio107/` folder), type: `npm link` to install the project dependencies and symlink a global module.  On some setups, you may have to do `sudo npm link --no-bin-links`
-4.  -OR- do an `npm -g install generator-nystudio107` to install it via npm (and thus skip the `npm link` step)
-5. The generator folder should be named `generator-nystudio107`.  GitHub recently started appending `-master` (the branch name) to the name of the folder for zip file downloads.
+1. Download & unzip the file and place the `generator-craftinstall` directory onto your dev machine
+2.  -OR- do a `git clone https://github.com/khalwat/generator-craftinstall.git` directly onto your dev machine.  You can then update it with `git pull`
+3. On the command line, from the root of the generator-craftinstall project (in the `generator-craftinstall/` folder), type: `npm link` to install the project dependencies and symlink a global module.  On some setups, you may have to do `sudo npm link --no-bin-links`
+4.  -OR- do an `npm -g install generator-craftinstall` to install it via npm (and thus skip the `npm link` step)
+5. The generator folder should be named `generator-craftinstall`.  GitHub recently started appending `-master` (the branch name) to the name of the folder for zip file downloads.
 
 Requires Node version 4.0.0 or later.
 
 ## Usage
 
-To create a new project and use generator-nystudio107 to scaffold it:
+To create a new project and use generator-craftinstall to scaffold it:
 
-    mkdir your-project-name && cd your-project-name
-    yo nystudio107
+    yo craftinstall
+
+generator-craftinstall will prompt you to choose from a list of `installs` that define various Craft CMS environments.  You can use the two that are included by default, but the real power comes when you create your own (see below).
 
 **NOTE: Craft is subject to licensing. This generator assumes you have read the terms of the Craft License Agreement, which are available [here](http://buildwithcraft.com/license)**
 
-generator-nystudio107 will do the following for you:
+generator-craftinstall will do the following for you:
 
-1. Ask you for the name of your application (`appName`)
-2. Download the lastest Craft CMS
-3. Delete the default `craft/templates`, `craft/config/db.php`, and `craft/config/general.php`
-4. Move the `public/htaccess` file to `public/.htaccess` so that Apache will read it
-5. Create new `craft/config/db.php` and `craft/config/general.php` files with your `appName` filled in, and a multi-environment config for development & production.  The database user & db name are both set to `appName`
-6. Create new `bower.json` and `package.json` files with your `appName` filled in, for use with Bower and NPM
-7. Copy over `.csslintrc`, `.gitignore`, and `.jshintrc` files into your project
-8. Copy over any folders of boilerplate files you want (base Craft CMS templates, base CSS, scripts, whatever)
-9. Clone Craft CMS plugins that you use with your projects from Github
-10. Set the permissions properly for your Craft CMS install; you might need to `chgrp -R WEBSERVER_GROUP` on the project folder, depending on your setup
-11. [Optionally] create a bare remote `git` repository on your git server, create a local git repository, commit all of the files in your new local project to it, and push them to `origin master`
-12. Run `bower install` and `npm install` on your project, so it's ready to go
-13. Execute arbitrary shell commands when the install is finished
+1. Ask you which `install` to use for this Craft CMS install; `installs` are a combination of settings and files used to scaffold your Craft CMS install
+2. Ask you for the name of your application (`appName`)
+3. Download the lastest Craft CMS
+4. Delete the default `craft/templates`, `craft/config/db.php`, and `craft/config/general.php`
+5. Move the `public/htaccess` file to `public/.htaccess` so that Apache will read it
+6. Create new `craft/config/db.php` and `craft/config/general.php` files with your `appName` filled in, and a multi-environment config for development & production.  The database user & db name are both set to `appName`
+7. Create new `bower.json` and `package.json` files with your `appName` filled in, for use with Bower and NPM
+8. Copy over `.csslintrc`, `.gitignore`, and `.jshintrc` files into your project
+9. Copy over any folders of boilerplate files you want (base Craft CMS templates, base CSS, scripts, whatever)
+10. [Optionally] pipe a MySQL database dump into your newly installed database
+11. Clone Craft CMS plugins that you use with your projects from Github
+12. Set the permissions properly for your Craft CMS install; you might need to `chgrp -R WEBSERVER_GROUP` on the project folder, depending on your setup
+13. [Optionally] create a bare remote `git` repository on your git server, create a local git repository, commit all of the files in your new local project to it, and push them to `origin master`
+14. Run `bower install` and `npm install` on your project, so it's ready to go
+15. Execute arbitrary shell commands when the install is finished
 
-## Customizing generator-nystudio107
+## Customizing generator-craftinstall
 
-generator-nystudio107 is pretty useful out of the box, but the real bliss comes from tailoring it to your environment.  **Fork it** on GitHub, and make it your own.  To this end, open up the file `generator-nystudio107/app/index.js` file in your favorite editor.
+generator-craftinstall is pretty useful out of the box, but the real bliss comes from tailoring it to your environment.  To do this, look in the `app/templates` and you'll see two example `installs`:
 
-You will see a number of configurable sections where you can tell generator-nystudio107 how to scaffold your projects.
+* **advanced_craft_install.json** - an "advanced" install that does things like download plugins, set up a `package.json` file for NPM, set up a `bower.json` file for Bower, etc.
+* **basic_craft_install.json** - just downloads Craft, and does a little cleanup for you, removing the default templates, and setting up a nice multi-environment config
+
+Open up either one of them, and you will see a number of configurable sections where you can tell generator-craftinstall how to scaffold your projects.  There is a corresponding folder that contains the template files, and the `.json` file that refers to it.
+
+The easiest thing to do is make a copy of one of the prefab configs, and modify it to your liking.  The nice thing about this type of configuration is you can zip up your `.json` file and your templates folder, and they can use your `yo craftinstall` setup too.
+
+### Basic Settings
+
+* **INSTALL_NAME** - The human readable name of the install, and what is shown in the install selector when you run `yo craftinstall`
+* **INSTALL_KEY** - The name of the folder in the `app/templates` directory that contains your various template and settings files.
 
 ### QUESTIONS
 
@@ -63,7 +76,7 @@ An additional variable `installDir` is also passed in automatically, e.g.:
 * `message:` the human-readable message asked during prompting
 * `default:` the default answer
 
-By default, generator-nystudio107 just asks for the `appName` but you can add whatever additional template variables you find useful.
+By default, generator-craftinstall just asks for the `appName` but you can add whatever additional template variables you find useful.
 
 ### DOWNLOAD_FILES
 
@@ -72,7 +85,7 @@ A list of arbitrary file URLs to download and extract
 * `name:` The human-readable name of the download file
 * `url:` the url to the file to be downloaded and extracted
 
-By default, generator-nystudio107 just downloads the latest Craft CMS, but if you have other things you want downloaded, you can add them here.
+By default, generator-craftinstall just downloads the latest Craft CMS, but if you have other things you want downloaded, you can add them here.
 
 ### DELETE_FILES
 
@@ -80,7 +93,7 @@ Files or directories that should be deleted after the download
 
 * `src:` the source path for the file, relative to the project directory
 
-By default, generator-nystudio107 deletes the default `craft/templates`, `craft/config/db.php`, and `craft/config/general.php` but if you have other things you want deleted, you can add them here.
+By default, generator-craftinstall deletes the default `craft/templates`, `craft/config/db.php`, and `craft/config/general.php` but if you have other things you want deleted, you can add them here.
 
 ### MOVE_FILES
 
@@ -89,7 +102,7 @@ Files that should be moved (renamed) after the download
 * `src:` the source path of the file, relative to the project directory
 * `dest:` the destination path of the file, relative to the project directory
 
-By default, generator-nystudio107 just moves the `public/htaccess` file to `public/.htaccess`, but you can add any other files that you want moved/renamed here.
+By default, generator-craftinstall just moves the `public/htaccess` file to `public/.htaccess`, but you can add any other files that you want moved/renamed here.
 
 ### TEMPLATE_FILES
 
@@ -98,7 +111,7 @@ Files that are parsed as templates with the 'answers' context, to allow for vari
 src: the source path for the file, relative to the 'templates' directory
 dest: the destination path for the file, relative to the project directory
 
-By default, generator-nystudio107 just creates new `craft/config/db.php`, `craft/config/general.php`, `bower.json` and `package.json` files with your `appName` filled in, but you can add any additional files you want parsed as templates here.
+By default, generator-craftinstall just creates new `craft/config/db.php`, `craft/config/general.php`, `bower.json` and `package.json` files with your `appName` filled in, but you can add any additional files you want parsed as templates here.
 
 ### BOILERPLATE_FILES
 
@@ -107,7 +120,7 @@ Individual files that we copy wholesale from 'templates' to the destination; we 
 * `src:` the source path of the file, relative to the 'templates' directory
 * `dest:` the destination path of the file, relative to the project directory
 
-By default, generator-nystudio107 just copies over `.csslintrc`, `.gitignore`, and `.jshintrc` into the root of your project, but you can add any additional files you want copied here.
+By default, generator-craftinstall just copies over `.csslintrc`, `.gitignore`, and `.jshintrc` into the root of your project, but you can add any additional files you want copied here.
 
 ### BOILERPLATE_DIRECTORIES
 
@@ -116,7 +129,29 @@ Directories that we copy wholesale from 'templates' to the destination
 * `src:` the source path of the directory, relative to the 'templates' directory
 * `dest:` the destination path of the directory, relative to the project directory
 
-By default, generator-nystudio107 just copies over some dummy `craft/templates` to show you how you can do it for your own base Craft CMS templates.
+By default, generator-craftinstall just copies over some dummy `craft/templates` to show you how you can do it for your own base Craft CMS templates.
+
+### MYSQL_DBS
+
+A MySQL database dump that we pipe into your new Craft CMS install's database.  Here's an example:
+
+    "MYSQL_DBS": [
+        {
+            "user": "homestead",
+            "password": "secret",
+            "src": "craft/db/dump.sql"
+        }
+    ],
+ 
+
+* `user:` the user name to use to connect to MySQL
+* `password:` the password to use to connect to MySQL
+* `src:` the path to the `mysqldump` for your database
+
+You can set up a default Craft install, add whatever users/fields/sections/whatever that you used as a base, then dump the database by choosing **Settings->Backup Database**.  Then when you run `yo craftinstall` the database will be there waiting for you.
+
+
+By default, generator-craftinstall does not dump a database.
 
 ### CRAFT_PLUGINS
 
@@ -126,7 +161,7 @@ Craft CMS plugins downloaded from git repositories on github.com
 * `url:` the git clone URL for the plugin
 * `path:` the destination path, relative to the project directory
 
-By default, generator-nystudio107 just clones my `Minify`, `Cookies`, and `Path Tools` plugins, but you can change these, or add any plugins you want cloned here.
+By default, generator-craftinstall just clones my `Minify`, `Cookies`, and `Path Tools` plugins, but you can change these, or add any plugins you want cloned here.
 
 ### REMOTE_GIT_ORIGIN
 
@@ -149,21 +184,25 @@ A list of arbitrary shell commands to execute in sequence at the [ End ] phase o
 * `name:` The human-readable name of the command
 * `command:` the shell command to be executed
 
-By default, generator-nystudio107 doesn't execute any commands at the [ End ] phase, but you can add any that you'd like executed here.
+By default, generator-craftinstall doesn't execute any commands at the [ End ] phase, but you can add any that you'd like executed here.
 
 ### Sample Output
 
-Here's an example of the output from a `yo nystudio107` generator:
+Here's an example of the output from a `yo craftinstall` generator:
 
 ```
-vagrant@homestead:~/sites/testapp101$ yo nystudio107
+vagrant@homestead:~/sites/testapp101$ yo craftinstall
 [ Initializing ]
+? Select which install to use: (Use arrow keys)
+❯ Advanced Craft Install 
+  Basic Craft Install 
 [ Prompting ]
 ? Application name testapp
 [ Configuring ]
 { appName: 'testapp',
-  installDir: 'testapp101',
-  templatesDir: 'templates' }
+  installDir: 'test',
+  templatesDir: 'templates/advanced_craft_install' }
++ Creating Craft install folder testapp
 > Downloading files
 + Craft CMS downloading
   4385 files download and extracted successfully;)
@@ -194,6 +233,9 @@ vagrant@homestead:~/sites/testapp101$ yo nystudio107
 + templates/json_src copied to json_src
 + templates/img_src copied to img_src
 + templates/fontello_src copied to fontello_src
+> Copying boilerplate directories
++ templates/advanced_craft_install/craft/templates copied to craft/templates
+> Mysql database restore
 > Cloning base Craft plugins
 + Minify plugin installed
 Cloning into 'craft/plugins/minify'...
@@ -238,7 +280,34 @@ To git@tastystakes.com:testapp.git
 vagrant@homestead:~/sites/testapp101$ 
 ```
 
+## Debugging
+
+If you receive an error that looks like this when doing `yo craftinstall`:
+
+```
+[ Initializing ]
+events.js:141
+      throw er; // Unhandled 'error' event
+      ^
+
+SyntaxError: Unexpected token ]
+    at Object.parse (native)
+    at /home/vagrant/webdev/craft/public/generator-craftinstall/app/index.js:86:36
+    at Array.forEach (native)
+    at module.exports.yo.generators.Base.extend.initializing (/home/vagrant/webdev/craft/public/generator-craftinstall/app/index.js:80:37)
+    at /home/vagrant/webdev/craft/public/generator-craftinstall/node_modules/yeoman-generator/lib/base.js:429:16
+    at processImmediate [as _immediateCallback] (timers.js:371:17)
+```
+
+...this means there is an error in your JSON file.  Validate your JSON with [jsonlint.com](http://jsonlint.com)
+
 ## Changelog
+
+### 1.1.0 -- 2016.05.02
+
+* Added the ability to create as many install configs as you like
+* Renamed it `generator-craftinstall` (was: generator-nystudio107)
+* [Improved] Updated README.md
 
 ### 1.0.0 -- 2015.11.29
 

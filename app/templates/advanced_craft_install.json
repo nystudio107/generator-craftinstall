@@ -1,0 +1,113 @@
+{
+    "INSTALL_NAME": "Advanced Craft Install",
+    "INSTALL_KEY": "advanced_craft_install",
+    "QUESTIONS": [
+        {
+            "name": "appName",
+            "message": "Application name",
+            "default": "testapp"
+        }
+    ],
+    "DOWNLOAD_FILES": [
+        {
+            "name": "Craft CMS",
+            "url": "http://buildwithcraft.com/latest.zip?accept_license=yes"
+        }
+    ],
+    "DELETE_FILES": [
+        {
+            "src": "craft/templates"
+        },
+        {
+            "src": "craft/config/db.php"
+        },
+        {
+            "src": "craft/config/general.php"
+        }
+    ],
+    "MOVE_FILES": [
+        {
+            "src": "public/htaccess",
+            "dest": "public/.htaccess"
+        }
+    ],
+    "TEMPLATE_FILES": [
+        {
+            "src": "_bower.json",
+            "dest": "bower.json"
+        },
+        {
+            "src": "_package.json",
+            "dest": "package.json"
+        },
+        {
+            "src": "craft/config/_db.php",
+            "dest": "craft/config/db.php"
+        },
+        {
+            "src": "craft/config/_general.php",
+            "dest": "craft/config/general.php"
+        }
+    ],
+    "BOILERPLATE_FILES": [
+        {
+            "src": "_csslintrc",
+            "dest": ".csslintrc"
+        },
+        {
+            "src": "_gitignore",
+            "dest": ".gitignore"
+        },
+        {
+            "src": "_jshintrc",
+            "dest": ".jshintrc"
+        }
+    ],
+    "BOILERPLATE_DIRECTORIES": [
+        {
+            "src": "craft/templates",
+            "dest": "craft/templates"
+        }
+    ],
+    "MYSQL_DBS": [
+        {
+            "user": "homestead",
+            "password": "secret",
+            "src": "craft/db/dump.sql"
+        }
+    ],
+    "CRAFT_PLUGINS": [
+        {
+            "name": "Minify",
+            "url": "https://github.com/khalwat/minify.git",
+            "path": "craft/plugins/minify"
+        },
+        {
+            "name": "Cookies",
+            "url": "https://github.com/khalwat/cookies.git",
+            "path": "craft/plugins/cookies"
+        },
+        {
+            "name": "Retour",
+            "url": "https://github.com/nystudio107/retour.git",
+            "path": "craft/plugins/retour"
+        },
+        {
+            "name": "SEOmatic",
+            "url": "https://github.com/nystudio107/seomatic.git",
+            "path": "craft/plugins/seomatic"
+        }
+    ],
+    "REMOTE_GIT_ORIGIN": "",
+    "BOWER_OPTIONS": [
+    ],
+    "NPM_OPTIONS": [
+        "--no-bin-links"
+    ],
+    "END_INSTALL_COMMANDS": [
+        {
+            "name": "Fin.",
+            "command": "echo 'Fin.'"
+        }
+    ]
+}

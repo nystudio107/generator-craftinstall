@@ -12,17 +12,15 @@ return array(
 /* -- Common config settings */
 
     '*' => array(
-        
-        'useEmailAsUsername' => true,
-    
+
         'autoLoginAfterAccountActivation' => true,
-        
+
         'omitScriptNameInUrls' => true,
         'generateTransformsBeforePageLoad' => true,
-        
+
         'rememberedUserSessionDuration' => 'P1Y',
         'userSessionDuration' => 'P1D',
-    
+
         'maxUploadFileSize' => 104857600,
     ),
 
@@ -38,11 +36,11 @@ return array(
             'basePath' => '/home/vagrant/sites/<%= installDir %>/',
             'baseUrl'  => 'http://<%= appName %>.dev/',
         ),
-        
+
     ),
 
 /* -- <%= appName %>.com production settings */
-    
+
     '<%= appName %>.com' => array(
 
         'siteUrl' => 'http://<%= appName %>.com/',

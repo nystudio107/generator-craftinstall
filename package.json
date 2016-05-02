@@ -1,15 +1,15 @@
 {
-  "name": "generator-nystudio107",
-  "version": "1.0.0",
-  "description": "generator-nystudio107 is a Yeoman generator for Craft CMS installs",
+  "name": "generator-craftinstall",
+  "version": "1.1.0",
+  "description": "generator-craftinstall is a Yeoman generator for Craft CMS installs",
   "main": "app/index.js",
   "files": [
     "app"
   ],
-  "repository": "khalwat/generator-nystudio107",
+  "repository": "nystudio107/generator-craftinstall",
   "keywords": [
     "yeoman-generator",
-    "generator-nystudio107",
+    "generator-craftinstall",
     "craft-cms",
     "craft"
   ],
@@ -20,6 +20,7 @@
     "chalk": "^1.1.1",
     "download": "^4.2.1",
     "inflection": "^1.7.1",
+    "yeoman-option-or-prompt": "^1.0.2",
     "pleasant-progress": "^1.1.0",
     "yeoman-generator": "^0.20.3"
   }

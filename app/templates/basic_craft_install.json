@@ -1,0 +1,67 @@
+{
+    "INSTALL_NAME": "Basic Craft Install",
+    "INSTALL_KEY": "basic_craft_install",
+    "QUESTIONS": [
+        {
+            "name": "appName",
+            "message": "Application name",
+            "default": "testapp"
+        }
+    ],
+    "DOWNLOAD_FILES": [
+        {
+            "name": "Craft CMS",
+            "url": "http://buildwithcraft.com/latest.zip?accept_license=yes"
+        }
+    ],
+    "DELETE_FILES": [
+        {
+            "src": "craft/templates"
+        },
+        {
+            "src": "craft/config/db.php"
+        },
+        {
+            "src": "craft/config/general.php"
+        }
+    ],
+    "MOVE_FILES": [
+        {
+            "src": "public/htaccess",
+            "dest": "public/.htaccess"
+        }
+    ],
+    "TEMPLATE_FILES": [
+        {
+            "src": "craft/config/_db.php",
+            "dest": "craft/config/db.php"
+        },
+        {
+            "src": "craft/config/_general.php",
+            "dest": "craft/config/general.php"
+        }
+    ],
+    "BOILERPLATE_FILES": [
+    ],
+    "BOILERPLATE_DIRECTORIES": [
+        {
+            "src": "craft/templates",
+            "dest": "craft/templates"
+        }
+    ],
+    "MYSQL_DBS": [
+    ],
+    "CRAFT_PLUGINS": [
+    ],
+    "REMOTE_GIT_ORIGIN": "",
+    "BOWER_OPTIONS": [
+    ],
+    "NPM_OPTIONS": [
+    ],
+    "END_INSTALL_COMMANDS": [
+        {
+            "name": "Fin.",
+            "command": "echo 'Fin.'"
+        }
+    ]
+}
