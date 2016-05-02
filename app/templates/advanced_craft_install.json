@@ -70,11 +70,6 @@
         }
     ],
     "MYSQL_DBS": [
-        {
-            "user": "homestead",
-            "password": "secret",
-            "src": "craft/db/dump.sql"
-        }
     ],
     "CRAFT_PLUGINS": [
         {
