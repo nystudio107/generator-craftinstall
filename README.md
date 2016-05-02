@@ -53,14 +53,14 @@ generator-craftinstall is pretty useful out of the box, but the real bliss comes
 * **advanced_craft_install.json** - an "advanced" install that does things like download plugins, set up a `package.json` file for NPM, set up a `bower.json` file for Bower, etc.
 * **basic_craft_install.json** - just downloads Craft, and does a little cleanup for you, removing the default templates, and setting up a nice multi-environment config
 
-Open up either one of them, and you will see a number of configurable sections where you can tell generator-craftinstall how to scaffold your projects.  There is a corresponding folder that contains the template files, and the `.json` file that refers to it.
+Open up either one of them, and you will see a number of configurable sections where you can tell generator-craftinstall how to scaffold your projects.  There is a corresponding folder that contains the template files (referred to hereinafter as `templates` folder), and the `.json` file that refers to it.
 
-The easiest thing to do is make a copy of one of the prefab configs, and modify it to your liking.  The nice thing about this type of configuration is you can zip up your `.json` file and your templates folder, and they can use your `yo craftinstall` setup too.
+The easiest thing to do is make a copy of one of the prefab configs, and modify it to your liking.  The nice thing about this type of configuration is you can zip up your `.json` file and your templates folder, and other people can use your `yo craftinstall` setup too.
 
 ### Basic Settings
 
 * **INSTALL_NAME** - The human readable name of the install, and what is shown in the install selector when you run `yo craftinstall`
-* **INSTALL_KEY** - The name of the folder in the `app/templates` directory that contains your various template and settings files.
+* **INSTALL_KEY** - The name of the folder in the `app/templates` directory that contains your various template and settings files.  This can be named whatever you want, but it's nice to have it match the name of your `.json` file.
 
 ### QUESTIONS
 
