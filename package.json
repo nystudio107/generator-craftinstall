@@ -1,6 +1,6 @@
 {
   "name": "generator-craftinstall",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "generator-craftinstall is a Yeoman generator for Craft CMS installs",
   "main": "app/index.js",
   "files": [

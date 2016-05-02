@@ -76,7 +76,7 @@ An additional variable `installDir` is also passed in automatically, e.g.:
 * `message:` the human-readable message asked during prompting
 * `default:` the default answer
 
-By default, generator-craftinstall just asks for the `appName` but you can add whatever additional template variables you find useful.
+By default, generator-craftinstall just asks for the `appName` but you can add whatever additional template variables you find useful.  [Inquirer.js](https://github.com/SBoudrias/Inquirer.js/) is used to ask the questions, so you can use any of the available Prompt Types that Inquirer.js supports.
 
 ### DOWNLOAD_FILES
 
@@ -108,8 +108,10 @@ By default, generator-craftinstall just moves the `public/htaccess` file to `pub
 
 Files that are parsed as templates with the 'answers' context, to allow for variable substitution while copying them from `src:` to `dest:`
 
-src: the source path for the file, relative to the 'templates' directory
-dest: the destination path for the file, relative to the project directory
+* `src:` the source path for the file, relative to the 'templates' directory
+* `dest:` the destination path for the file, relative to the project directory
+
+Yeoman uses [EJS](http://ejs.co) for the templating language, so you can use any expressions that EJS supports in your templates.
 
 By default, generator-craftinstall just creates new `craft/config/db.php`, `craft/config/general.php`, `bower.json` and `package.json` files with your `appName` filled in, but you can add any additional files you want parsed as templates here.
 
@@ -303,12 +305,18 @@ SyntaxError: Unexpected token ]
 
 ## Changelog
 
+### 1.1.1 -- 2016.05.02
+
+* [Improved] Cleaned up the documentation a good bit
+* [Fixed] Removed the MYSQL_DBS from the `advanced_craft_install.json`
+* [Improved] Updated README.md
+
 ### 1.1.0 -- 2016.05.02
 
-* Added the ability to create as many install configs as you like
-* Renamed it `generator-craftinstall` (was: generator-nystudio107)
+* [Added] Added the ability to create as many install configs as you like
+* [Added] Renamed it `generator-craftinstall` (was: generator-nystudio107)
 * [Improved] Updated README.md
 
 ### 1.0.0 -- 2015.11.29
 
-* Initial release
+* [Added] Initial release
