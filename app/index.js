@@ -139,18 +139,22 @@ module.exports = yo.generators.Base.extend({
 /* -- Download files */
 
         console.log(chalk.green('> Downloading files'));
-        for (var i = 0; i < this.install.DOWNLOAD_FILES.length; i++) {
+        var downloadCount = this.install.DOWNLOAD_FILES.length;
+        var downloadProgress = [];
+        for (var i = 0; i < downloadCount; i++) {
             var done = this.async();
             var download = this.install.DOWNLOAD_FILES[i];
             console.log('+ ' + chalk.green(download.name) + ' downloading');
-            var progress = new pleasant();
-            progress.start('Working');
+            downloadProgress[i] = new pleasant();
+            downloadProgress[i].start('Working');
             this.download(download.url, function() {
-                progress.stop();
-                done();
+                downloadProgress[(downloadCount - 1)].stop();
+                downloadCount--;
+                if (downloadCount === 0) {
+                  done();
+                }
                 });
             }
-
         },
 
 /* -- writing -- Where you write the generator specific files (routes, controllers, etc) */
