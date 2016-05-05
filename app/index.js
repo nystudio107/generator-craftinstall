@@ -51,6 +51,25 @@ module.exports = yo.generators.Base.extend({
     initializing: function() {
         console.log(chalk.yellow.bold('[ Initializing ]'));
 
+/* -- Process data in an array synchronously, moving onto the n+1 item only after the nth item callback */
+
+        this.synchronousLoop = function(data, processData, loopDone) {
+            if (data.length > 0) {
+                var loop = function(data, i, processData, loopDone) {
+                    processData(data[i], i, function() {
+                        if (++i < data.length) {
+                            loop(data, i, processData, loopDone);
+                        } else {
+                            loopDone();
+                        }
+                    });
+                };
+                loop(data, 0, processData, loopDone);
+            } else {
+                loopDone();
+            }
+        };
+
 /* -- Set up the download command */
 
         this.download = function(url, cb) {
@@ -139,22 +158,22 @@ module.exports = yo.generators.Base.extend({
 /* -- Download files */
 
         console.log(chalk.green('> Downloading files'));
-        var downloadCount = this.install.DOWNLOAD_FILES.length;
-        var downloadProgress = [];
-        for (var i = 0; i < downloadCount; i++) {
-            var done = this.async();
-            var download = this.install.DOWNLOAD_FILES[i];
-            console.log('+ ' + chalk.green(download.name) + ' downloading');
-            downloadProgress[i] = new pleasant();
-            downloadProgress[i].start('Working');
-            this.download(download.url, function() {
-                downloadProgress[(downloadCount - 1)].stop();
-                downloadCount--;
-                if (downloadCount === 0) {
-                  done();
-                }
-                });
-            }
+        var done = this.async();
+        var _this = this;
+        this.synchronousLoop(this.install.DOWNLOAD_FILES,
+            function(element, i, callback){
+                console.log('+ ' + chalk.green(element.name) + ' downloading');
+                var progress = new pleasant();
+                progress.start('Working');
+                _this.download(element.url, function() {
+                    progress.stop();
+                    callback();
+                    });
+            },
+            function(){
+                done();
+            });
+
         },
 
 /* -- writing -- Where you write the generator specific files (routes, controllers, etc) */
