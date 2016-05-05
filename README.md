@@ -305,6 +305,11 @@ SyntaxError: Unexpected token ]
 
 ## Changelog
 
+### 1.1.2 -- 2016.05.05
+
+* [Fixed] Fixed an issue with multiple files being downloaded in `DOWNLOAD_FILES` thanks to @wbrowar
+* [Improved] Updated README.md
+
 ### 1.1.1 -- 2016.05.02
 
 * [Improved] Cleaned up the documentation a good bit
