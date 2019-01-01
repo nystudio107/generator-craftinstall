@@ -1,3 +1,9 @@
+[![No Maintenance Intended](http://unmaintained.tech/badge.svg)](http://unmaintained.tech/)
+
+# DEPRECATED
+
+This package is no longer supported, but it is fully functional, and you may continue to use it as you see fit. The license also allows you to fork it and make changes as needed for legacy support reasons.
+
 # generator-craftinstall 
 
 generator-craftinstall is a [Yeoman](http://yeoman.io) generator for [Craft CMS](http://www.buildwithcraft.com) installs
